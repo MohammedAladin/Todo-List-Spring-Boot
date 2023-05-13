@@ -7,6 +7,7 @@ import com.SpringBoot.Course.springnoot.todos.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -66,6 +67,17 @@ public class TodoControllerTest {
                         content(mapper.writeValueAsString(todo)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.title", equalTo("task1")));
+    }
+    @Test
+    public void whenPostTodo_thenCreateTodo() throws Exception{
+        Todo todo = new Todo("1", "task1", "this is task1");
+        when(todoServices.create(Mockito.any(Todo.class))).thenReturn(todo);
+
+        mockMvc.perform(post("/api/v1/todos/create")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(new ObjectMapper().writeValueAsString(todo)))
+            .andExpect(status().isCreated())
+            .andExpect(jsonPath("$.title", equalTo(todo.getTitle())));
     }
 
 
