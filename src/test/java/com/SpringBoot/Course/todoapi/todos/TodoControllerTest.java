@@ -3,14 +3,14 @@ package com.SpringBoot.Course.todoapi.todos;
 
 import com.SpringBoot.Course.springnoot.App;
 import com.SpringBoot.Course.springnoot.todos.*;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
+
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import org.junit.jupiter.api.extension.ExtendWith;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -19,6 +19,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+
+
 
 
 import java.util.Arrays;
@@ -53,6 +55,19 @@ public class TodoControllerTest {
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(status().isOk());
     }
+    @Test
+    public void whenGetById_returnTodo() throws Exception {
+        Todo todo = new Todo("1", "task1", "this is task1");
+        when(todoServices.getById(anyString())).thenReturn(todo);
+
+        ObjectMapper mapper = new ObjectMapper();
+        mockMvc.perform(get("/api/v1/todos/1").
+                        contentType(MediaType.APPLICATION_JSON).
+                        content(mapper.writeValueAsString(todo)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.title", equalTo("task1")));
+    }
+
 
 
 
