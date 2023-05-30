@@ -1,5 +1,6 @@
-package com.SpringBoot.Course.springnoot.security;
+package com.SpringBoot.Course.springnoot.Repositry;
 
+import com.SpringBoot.Course.springnoot.Models.AppUser;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

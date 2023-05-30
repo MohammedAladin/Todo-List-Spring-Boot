@@ -1,4 +1,4 @@
-package com.SpringBoot.Course.springnoot.security;
+package com.SpringBoot.Course.springnoot.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;

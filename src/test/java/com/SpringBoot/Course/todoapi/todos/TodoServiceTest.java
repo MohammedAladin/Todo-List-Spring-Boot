@@ -1,7 +1,9 @@
 package com.SpringBoot.Course.todoapi.todos;
 
+import com.SpringBoot.Course.springnoot.Models.Todo;
+import com.SpringBoot.Course.springnoot.Repositry.TodoRepo;
+import com.SpringBoot.Course.springnoot.Services.TodoServices;
 import com.SpringBoot.Course.springnoot.error.NotFoundException;
-import com.SpringBoot.Course.springnoot.todos.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

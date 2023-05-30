@@ -1,7 +1,7 @@
 package com.SpringBoot.Course.springnoot.util;
 
-import com.SpringBoot.Course.springnoot.security.AppUser;
-import com.SpringBoot.Course.springnoot.security.UserService;
+import com.SpringBoot.Course.springnoot.Models.AppUser;
+import com.SpringBoot.Course.springnoot.Services.UserService;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;

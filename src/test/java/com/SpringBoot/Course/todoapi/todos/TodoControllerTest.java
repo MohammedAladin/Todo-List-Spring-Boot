@@ -2,7 +2,8 @@ package com.SpringBoot.Course.todoapi.todos;
 
 
 import com.SpringBoot.Course.springnoot.App;
-import com.SpringBoot.Course.springnoot.todos.*;
+import com.SpringBoot.Course.springnoot.Models.Todo;
+import com.SpringBoot.Course.springnoot.Services.TodoServices;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -28,7 +29,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.mockito.BDDMockito.*;
-import static org.assertj.core.api.Assertions.*;
 import static org.hamcrest.Matchers.*;
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest(classes = App.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

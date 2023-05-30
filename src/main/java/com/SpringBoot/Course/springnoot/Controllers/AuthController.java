@@ -1,10 +1,13 @@
-package com.SpringBoot.Course.springnoot.security;
+package com.SpringBoot.Course.springnoot.Controllers;
 
+import com.SpringBoot.Course.springnoot.security.SignInRequest;
+import com.SpringBoot.Course.springnoot.security.TokenResponse;
+import com.SpringBoot.Course.springnoot.security.TokenUtil;
+import com.SpringBoot.Course.springnoot.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,13 +1,10 @@
-package com.SpringBoot.Course.springnoot.security;
+package com.SpringBoot.Course.springnoot.Controllers;
 
-import com.SpringBoot.Course.springnoot.todos.Todo;
+import com.SpringBoot.Course.springnoot.Models.AppUser;
+import com.SpringBoot.Course.springnoot.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.event.ListDataEvent;
 import java.util.List;
 
 @RequestMapping("/api/auth/")
